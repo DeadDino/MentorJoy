@@ -1,0 +1,124 @@
+:root {
+    --main-color: #618cdf;
+    --second-color: #d6e4ff;
+}
+
+.header {
+    padding: 20px;
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.files-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.file-block {
+    margin: 10px;
+    display: block;
+    text-align: center;
+}
+
+.file-block > div {
+    width: 150px;
+    min-height: 180px;
+    border-color: var(--main-color);
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.data-block {
+    height: 150px;
+}
+
+.file-block > div > .template-buttons {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+}
+
+.file-block > div > .template-buttons form {
+    margin: 2px;
+}
+
+.file-block > div > .template-buttons form input {
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    visibility: hidden;
+}
+
+.file-block:hover > div > .template-buttons form input {
+    visibility: visible;
+}
+
+input[name="edit"] {
+    background-color: green;
+}
+
+input[name="delete"] {
+    background-color: red;
+}
+
+input[name="create"] {
+    background-color: var(--main-color);
+}
+
+.file-block span {
+    color: var(--main-color);
+}
+
+.container {
+    padding: 8px;    
+}
+
+.add-button {
+    color: white;
+    background-color: var(--main-color);
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30pt;
+    border-width: 0;
+}
+
+body {
+    margin: 0;
+    font-family: roboto;
+}
+
+.header-button {
+    position: fixed;
+    top: 20px;
+}
+
+.header-button input {
+    background-color: var(--second-color);
+    text-align: center;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 30pt;
+    border-width: 0;
+}
+
+.templates {
+    left: 10px;
+}
+
+.logout {
+    right: 10px;
+}

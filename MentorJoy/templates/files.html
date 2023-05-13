@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static "./slide.css" %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form method="get" action="/templates" class="templates header-button">
+        <input type="submit" name="submit" value="Шаблоны">
+    </form>
+    <form method="get" action="/logout" class="logout header-button">
+        <input type="submit" name="submit" value="Выйти">
+    </form>
+    <div class="header">Файлы</div>
+    <div class="container">
+        <div class="files-container">
+            {% for entity in templates %}
+            <div class="file-block">
+                <div>
+                    <div class="data-block">
+                        {{ entity.data }}
+                    </div>
+                    <div class="template-buttons">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="submit" name="download" value="Скачать">
+                            <input type="text" name="id" value="{{ entity.id }}" style="display:none">
+                        </form>
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="submit" name="delete" value="Удалить">
+                            <input type="text" name="id" value="{{ entity.id }}" style="display:none">
+                        </form>
+                    </div>
+                </div>
+                <span>{{ entity.title }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <form method="get" action="/new-project">
+            <input type="submit" name="submit" value="+" class="add-button">
+        </form>
+    </div>
+</body>
+</html>

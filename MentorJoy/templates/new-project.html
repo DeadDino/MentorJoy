@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "./new-project.css" %}">
+</head>
+<body>
+    <div class="header">Создание проекта</div>
+    <div class="container">
+        <form class="form-container" id="form" method="post">
+            {% csrf_token %}
+            <ol>
+                {% if edit %}
+                <input type="text" name="id" value="{{ edit.sampleId }}" style="display:none">
+                {% endif %}
+                <li class="form-block">
+                    С кем согласован ваш проект?
+                    <textarea form="form" name="q1">{% if edit %}{{ edit.fullTeacherName }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Каков его статус?
+                    <textarea form="form" name="q2">{% if edit %}{{ edit.teacher.status }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Кем утвержден проект?
+                    <textarea form="form" name="q3">{% if edit %}{{ edit.fullHeadTeacherName }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Каков его статус?
+                    <textarea form="form" name="q4">{% if edit %}{{ edit.headTeacher.status }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Год создания
+                    <textarea form="form" name="q5">{% if edit %}{{ edit.year }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Наименование программы
+                    <textarea form="form" name="q6">{% if edit %}{{ edit.programName }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Краткое наименование программы
+                    <textarea form="form" name="q7">{% if edit %}{{ edit.programShortName }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Документ, на основании которого ведется разработка
+                    <textarea form="form" name="q8">{% if edit %}{{ edit.byDocument }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Краткое описание области применения
+                    <textarea form="form" name="q9">{% if edit %}{{ edit.description }}{% endif %}</textarea>
+                </li>
+                <li class="form-block">
+                    Наименование программы на английском
+                    <textarea form="form" name="q10">{% if edit %}{{ edit.programNameEnglish }}{% endif %}</textarea>
+                </li>
+                <li class="dropdown form-block">
+                    Департамент
+                    <select name="q12" form="form">
+                        {% for option in deps %}
+                        <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+                <li class="dropdown form-block">
+                    Регистрационный номер
+                    <select name="q13" form="form">
+                        {% for option in reg %}
+                        <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+                <input type="submit" name="submit" value="Создать">
+            </ol>
+        </form>
+    </div>
+</body>
+</html>

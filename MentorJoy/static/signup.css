@@ -1,0 +1,108 @@
+:root {
+    --main-color: #618cdf;
+    --second-color: #d6e4ff;
+}
+
+.header {
+    padding: 20px;
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.files-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.error {
+    color: red;
+}
+
+.file-block {
+    margin: 10px;
+    display: block;
+    text-align: center;
+}
+
+.file-block div {
+    width: 150px;
+    min-height: 180px;
+    border-color: var(--main-color);
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.file-block span {
+    color: var(--main-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-button {
+    color: white;
+    background-color: var(--main-color);
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30pt;
+    border-width: 0;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: white;
+    align-items: center;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input {
+    background-color: var(--second-color);
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    border-width: 0;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    background-color: var(--main-color);
+    width: 175px;
+    height: 40px;
+    color: white;
+    font-size: 12pt;
+}
+
+h1 {
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: roboto;
+    background-color: var(--main-color);
+}

@@ -1,0 +1,5 @@
+<img
+              src="public/playground_assets/line42152-cuq.svg"
+              alt="Line42152"
+              class="slide1693-line4"
+            />

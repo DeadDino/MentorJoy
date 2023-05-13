@@ -1,0 +1,100 @@
+:root {
+    --main-color: #618cdf;
+    --second-color: #d6e4ff;
+}
+
+.header {
+    padding: 20px;
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.files-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.file-block {
+    margin: 10px;
+    display: block;
+    text-align: center;
+}
+
+.file-block div {
+    width: 150px;
+    min-height: 180px;
+    border-color: var(--main-color);
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.file-block span {
+    color: var(--main-color);
+}
+
+.container {
+    padding: 8px;    
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-block {
+    margin: 50px;
+    color: var(--main-color);
+    font-size: 15pt;
+    width: 600px;
+}
+
+textarea {
+    background-color: var(--second-color);
+    border-width: 0;
+    min-width: 500px;
+    min-height: 120px;
+    border-radius: 15px;
+}
+
+select {
+    min-width: 500px;
+    max-width: 500px;
+}
+
+input {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 15pt;
+    text-align: center;
+    border-radius: 10px;
+    width: 150px;
+    height: 75px;
+    border-width: 0;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.add-button {
+    color: white;
+    background-color: var(--main-color);
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30pt;
+}
+
+body {
+    margin: 0;
+    font-family: roboto;
+}
